@@ -1,114 +1,28 @@
-name: Continuous Deployment (CD)
+name: Deploy to Production
 
 on:
   push:
-    branches: [ main ]
-  workflow_run:
-    workflows: ["Continuous Integration (CI)"]
-    types:
-      - completed
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  build:
-    name: Build Application
+  deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run == null || github.event.workflow_run.conclusion == 'success' }}
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-      
-    - name: Create build directory
-      run: mkdir -p build
-      
-    - name: Copy files to build
-      run: |
-        cp index.html build/
-        cp style.css build/
-        cp script.js build/
-        cp -r images build/ 2>/dev/null || true
-    
-    - name: Optimize HTML
-      run: |
-        npx html-minifier --collapse-whitespace --remove-comments -o build/index.html index.html || true
-    
-    - name: Optimize CSS
-      run: |
-        npx clean-css-cli -o build/style.min.css style.css || true
-        cp build/style.min.css build/style.css 2>/dev/null || true
-    
-    - name: Optimize JavaScript
-      run: |
-        npx uglify-js script.js --compress --mangle -o build/script.min.js || true
-        cp build/script.min.js build/script.js 2>/dev/null || true
-    
-    - name: Upload build artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: production-build
-        path: build/
 
-  deploy-github:
-    name: Deploy to GitHub Pages
-    needs: build
-    runs-on: ubuntu-latest
-    
     steps:
-    - name: Download build artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: production-build
-        path: build
-    
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
-        publish_branch: gh-pages
-        force_orphan: true
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        commit_message: 'Deploy: ${{ github.event.head_commit.message }}'
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-  deploy-netlify:
-    name: Deploy to Netlify
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.repository == 'Sabri123-ux/website-practical'
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-      
-    - name: Deploy to Netlify
-      uses: nwtgck/actions-netlify@v2.0
-      with:
-        publish-dir: '.'
-        production-branch: main
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        deploy-message: "Deploy from GitHub Actions CD"
-        enable-pull-request-comment: true
-        enable-commit-comment: true
-      env:
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      - name: Install Dependencies
+        run: npm install
 
-  notify:
-    name: Deployment Notification
-    needs: [deploy-github, deploy-netlify]
-    runs-on: ubuntu-latest
-    if: always()
-    
-    steps:
-    - name: Create deployment summary
-      run: |
-        echo "##  Deployment Complete" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "| Platform | Status | URL |" >> $GITHUB_STEP_SUMMARY
-        echo "|----------|--------|-----|" >> $GITHUB_STEP_SUMMARY
-        echo "| GitHub Pages |  Live | https://sabri123-ux.github.io/website-practical/ |" >> $GITHUB_STEP_SUMMARY
-        echo "| Netlify |  Live | https://website-practical.netlify.app |" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo " Deployed successfully!" >> $GITHUB_STEP_SUMMARY
+      - name: Build Project
+        run: npm run build
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
+      with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          
