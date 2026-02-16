@@ -1,23 +1,33 @@
 {
   "name": "website-practical",
   "version": "1.0.0",
-  "description": "Portfolio website with CI/CD pipeline",
+  "description": "Professional Portfolio Website with CI/CD",
   "main": "index.html",
   "scripts": {
-    "lint": "stylelint \"**/*.css\"",
-    "validate:html": "html-validator --file=index.html",
-    "build": "echo \"Static site - no build step required\"",
-    "test": "echo \"Tests passed\""
+    "test": "echo \"Tests passed\"",
+    "test:html": "npx html-validator-cli --file=index.html",
+    "test:css": "npx stylelint *.css"
   },
-  "keywords": ["portfolio", "ci-cd", "github-actions"],
-  "author": "Your Name",
+  "keywords": [
+    "portfolio",
+    "html",
+    "css",
+    "javascript",
+    "ci-cd"
+  ],
+  "author": "Irupal Mohomeed Sabri, T. Thusanthani, A. M. Sahjath",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Sabri123-ux/website-practical.git"
   },
+  "bugs": {
+    "url": "https://github.com/Sabri123-ux/website-practical/issues"
+  },
+  "homepage": "https://sabri123-ux.github.io/website-practical",
   "devDependencies": {
     "html-validator-cli": "^7.0.1",
-    "stylelint": "^15.0.0"
+    "stylelint": "^15.0.0",
+    "stylelint-config-standard": "^34.0.0"
   }
 }
