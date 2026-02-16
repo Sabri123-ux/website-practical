@@ -4,6 +4,9 @@
   "description": "Portfolio website with CI/CD pipeline",
   "main": "index.html",
   "scripts": {
+    "lint": "stylelint \"**/*.css\"",
+    "validate:html": "html-validator --file=index.html",
+    "build": "echo \"Static site - no build step required\"",
     "test": "echo \"Tests passed\""
   },
   "keywords": ["portfolio", "ci-cd", "github-actions"],
