@@ -13,9 +13,9 @@ A modern, responsive portfolio website designed to showcase professional skills,
 
 ## Technologies Used
 - HTML5, CSS3, JavaScript
-- Font Awesome Icons (Library used for social media icons)
-- GitHub Actions (CI/CD)
-- GitHub Pages (Deployment platform)
+- Font Awesome Icons
+- GitHub Actions
+- GitHub Pages
 
 ## Features
 - Feature 1: Responsive Navigation Bar with smooth scrolling to all sections
@@ -24,9 +24,9 @@ A modern, responsive portfolio website designed to showcase professional skills,
 
 ## Branch Strategy
 We implemented the following branching strategy:
-- `main` - Production branch (final, deployed code)
-- `develop` - Integration branch (testing before merging to main)
-- `feature/*` - Feature development branches (e.g., `feature/html`, `feature/css`, `feature/javascript`)
+- `main` - Production branch
+- `develop` - Integration branch
+- `feature/*` - Feature development branches
 
 ## Individual Contributions
 
@@ -34,7 +34,7 @@ We implemented the following branching strategy:
 - Repository setup and configuration on GitHub
 - GitHub Actions CI/CD pipeline implementation for automated deployment
 - Deployment setup and management on GitHub Pages
-- Created complete HTML structure for all sections (navbar, hero, about, skills, projects, contact, footer)
+- Created complete HTML structure for all sections
 - Added semantic HTML5 tags for better accessibility
 - Key commits: `feat: initialize HTML structure`, `ci: add GitHub Actions workflow`, `docs: create README`
 
@@ -59,8 +59,8 @@ We implemented the following branching strategy:
 ## Setup Instructions
 
 ### Prerequisites
-- Node.js (version 18 or higher)
 - Git
+- Web Browser
 
 ### Installation
 ```bash
@@ -70,10 +70,6 @@ git clone https://github.com/Sabri123-ux/website-practical.git
 # Navigate to project directory
 cd website-practical
 
-# Install dependencies (if any)
-npm install
-
-# Run development server
-npm run dev
-
-# Or simply open index.html in your browser
+# Open index.html in your browser
+start index.html  # For Windows
+open index.html   # For Mac
