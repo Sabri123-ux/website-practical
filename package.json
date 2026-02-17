@@ -4,11 +4,11 @@
   "description": "Professional Portfolio Website with CI/CD",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"No tests needed for portfolio\"",
-    "test:html": "npx html-validator-cli --file=index.html || true",
-    "test:css": "npx stylelint *.css --allow-empty-input || true",
-    "lint": "echo \"No linter configured\"",
-    "build": "echo \"No build needed\""
+    "lint:html": "npx html-validator-cli --file=index.html",
+    "lint:css": "npx stylelint '*.css' --allow-empty-input",
+    "lint": "npm run lint:html && npm run lint:css",
+    "dev": "live-server --port=5500",
+    "build": "echo 'No build needed for vanilla HTML/CSS/JS'"
   },
   "keywords": [
     "portfolio",
@@ -17,7 +17,7 @@
     "javascript",
     "ci-cd"
   ],
-  "author": "Irupal Mohomeed Sabri, T.Thusanthani, A.M.Sahjath",
+  "author": "Irupal Mohomeed Sabri, T. Thusanthani, A. M. Sahjath",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
   "homepage": "https://sabri123-ux.github.io/website-practical",
   "devDependencies": {
     "html-validator-cli": "^7.0.1",
-    "stylelint": "^15.0.0"
+    "stylelint": "^15.0.0",
+    "live-server": "^1.2.2"
   }
 }
