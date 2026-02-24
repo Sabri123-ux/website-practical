@@ -5,10 +5,11 @@
   "main": "index.html",
   "scripts": {
     "lint:html": "npx html-validator-cli --file=index.html",
-    "lint:css": "npx stylelint '*.css' --allow-empty-input",
+    "lint:css": "npx stylelint \"*.css\" --allow-empty-input",
     "lint": "npm run lint:html && npm run lint:css",
     "dev": "live-server --port=5500",
-    "build": "echo 'No build needed for vanilla HTML/CSS/JS'"
+    "build": "echo \"No build needed for vanilla HTML/CSS/JS\""
+    
   },
   "keywords": [
     "portfolio",
@@ -33,3 +34,4 @@
     "live-server": "^1.2.2"
   }
 }
+
