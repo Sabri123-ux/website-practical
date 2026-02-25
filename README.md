@@ -1,9 +1,9 @@
 # Project Title: Professional Portfolio Website
 
 ## Group Information
-- **Student 1:** Irupal Mohomeed Sabri - ITBIN-2313-0096 - Role: HTML Developer
-- **Student 2:** T. Thusanthani - ITBIN-2211-0305 - Role: CSS Developer
-- **Student 3:** A. M. Sahjath - ITBIN-2313-0097 - Role: JavaScript Developer
+- **Student 1:** Irupal Mohomeed Sabri - ITBIN-2313-0096 - Role: Devops Engineer
+- **Student 2:** T. Thusanthani - ITBIN-2211-0305 - Role: Frontend Developer
+- **Student 3:** A. M. Sahjath - ITBIN-2313-0097 - Role: Frontend Developer
 
 ## Project Description
 A modern, responsive portfolio website designed to showcase professional skills, projects, and contact information. This application features a clean interface with smooth animations, project showcases, and a functional contact form. Built with vanilla HTML, CSS, and JavaScript, it demonstrates best practices in web development and responsive design.
