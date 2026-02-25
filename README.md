@@ -1,7 +1,7 @@
 # Project Title: Professional Portfolio Website
 
 ## Group Information
-- **Student 1:** Irupal Mohomed Sabri - ITBIN-2313-0096 - Role: Devops Engineer
+- **Student 1:** Irupaal Mohomed Sabri - ITBIN-2313-0096 - Role: Devops Engineer
 - **Student 2:** T. Thusanthani - ITBIN-2211-0305 - Role: Frontend Developer
 - **Student 3:** A. M. Sahjath - ITBIN-2313-0097 - Role: Frontend Developer
 
