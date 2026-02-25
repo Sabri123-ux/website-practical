@@ -30,7 +30,7 @@ We implemented the following branching strategy:
 
 ## Individual Contributions
 
-### Irupal Mohomeed Sabri (Student 1 - HTML Developer)
+### Irupal Mohomeed Sabri (Student 1 - Devops Engineer)
 - Repository setup and configuration on GitHub
 - GitHub Actions CI/CD pipeline implementation for automated deployment
 - Deployment setup and management on GitHub Pages
@@ -38,7 +38,7 @@ We implemented the following branching strategy:
 - Added semantic HTML5 tags for better accessibility
 - Key commits: `feat: initialize HTML structure`, `ci: add GitHub Actions workflow`, `docs: create README`
 
-### T. Thusanthani (Student 2 - CSS Developer)
+### T. Thusanthani (Student 2 - Frontend Developer)
 - Designed complete styling for the entire website
 - Created responsive layouts using CSS Flexbox and Grid
 - Developed navigation bar styling with hover effects
@@ -47,7 +47,7 @@ We implemented the following branching strategy:
 - Implemented media queries for mobile responsiveness
 - Key commits: `style: add base CSS styles`, `style: design navbar and hero`, `responsive: add mobile layout`
 
-### A. M. Sahjath (Student 3 - JavaScript Developer)
+### A. M. Sahjath (Student 3 - Frontend Developer)
 - Implemented smooth scrolling functionality for navigation links
 - Created contact form validation with error checking
 - Added "Hire Me" button functionality with alert message
