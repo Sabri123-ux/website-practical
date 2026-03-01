@@ -1,0 +1,11 @@
+# ignore the docker-compose file itself
+Dockerfile
+docker-compose.yml
+
+# ignore git files
+.git
+.gitignore
+
+# ignore local dev artifacts
+node_modules
+npm-debug.log

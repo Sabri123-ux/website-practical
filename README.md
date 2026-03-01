@@ -60,6 +60,7 @@ We implemented the following branching strategy:
 
 ### Prerequisites
 - Git
+- Docker & Docker Compose
 - Web Browser
 
 ### Installation
@@ -73,3 +74,15 @@ cd website-practical
 # Open index.html in your browser
 start index.html  # For Windows
 open index.html   # For Mac
+```
+
+### Docker Deployment
+```bash
+# build and run with docker-compose
+docker-compose up --build -d
+
+# visit in browser at http://localhost:8080
+
+# to stop and remove containers
+docker-compose down
+```
